@@ -9,17 +9,55 @@
 
 <style>
 
+:root{
+--bg-main: linear-gradient(135deg,#0f2027,#141e30,#1a2a6c);
+--accent:#00f5ff;
+--text:#ffffff;
+}
+
 body{
 font-family:Poppins,sans-serif;
 margin:0;
-background:linear-gradient(135deg,#0f2027,#141e30,#1a2a6c);
-color:white;
+background:var(--bg-main);
+color:var(--text);
+transition:0.4s;
+}
+
+/* RED MODE */
+body.red-theme{
+--bg-main: linear-gradient(135deg,#0a0000,#1a0000,#2b0000,#3d0000);
+--accent:#ff0000;
+}
+
+/* HEADER */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:30px 10%;
+}
+
+.theme-toggle{
+width:40px;
+height:40px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+background:rgba(255,255,255,0.1);
+cursor:pointer;
+font-size:18px;
+}
+
+.theme-toggle:hover{
+background:var(--accent);
+color:black;
 }
 
 .container{
 max-width:1000px;
 margin:auto;
-padding:80px 20px;
+padding:60px 20px;
 text-align:center;
 }
 
@@ -54,7 +92,7 @@ flex-wrap:wrap;
 .btn{
 padding:14px 30px;
 border-radius:30px;
-background:#00f5ff;
+background:var(--accent);
 color:#000;
 font-weight:600;
 text-decoration:none;
@@ -70,6 +108,16 @@ box-shadow:0 10px 25px rgba(0,255,255,0.5);
 </head>
 
 <body>
+
+<header>
+
+<h2>Portfolio Project</h2>
+
+<div class="theme-toggle" onclick="toggleTheme()">
+🔥
+</div>
+
+</header>
 
 <div class="container">
 
@@ -103,6 +151,24 @@ Contact Me
 </div>
 
 </div>
+
+<script>
+
+function toggleTheme(){
+
+document.body.classList.toggle("red-theme");
+
+const icon=document.querySelector(".theme-toggle");
+
+if(document.body.classList.contains("red-theme")){
+icon.innerHTML="🔥";
+}else{
+icon.innerHTML="❄️";
+}
+
+}
+
+</script>
 
 </body>
 </html>
