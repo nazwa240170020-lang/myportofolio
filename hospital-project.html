@@ -9,18 +9,55 @@
 
 <style>
 
+:root{
+--bg-main: linear-gradient(135deg,#141e30,#243b55);
+--accent:#00f5ff;
+--text:white;
+}
+
 body{
 font-family:Poppins,sans-serif;
-background:linear-gradient(135deg,#141e30,#243b55);
-color:white;
+background:var(--bg-main);
+color:var(--text);
 margin:0;
 padding:0;
+transition:0.4s;
+}
+
+/* RED MODE */
+body.red-theme{
+--bg-main: linear-gradient(135deg,#0a0000,#1a0000,#3d0000);
+--accent:#ff0000;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:30px 10%;
+}
+
+.theme-toggle{
+width:40px;
+height:40px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+background:rgba(255,255,255,0.1);
+cursor:pointer;
+font-size:18px;
+}
+
+.theme-toggle:hover{
+background:var(--accent);
+color:black;
 }
 
 .container{
 max-width:900px;
 margin:auto;
-padding:80px 20px;
+padding:60px 20px;
 text-align:center;
 }
 
@@ -51,19 +88,31 @@ margin:10px;
 padding:12px 24px;
 border-radius:30px;
 text-decoration:none;
-background:#00f5ff;
+background:var(--accent);
 color:black;
 font-weight:600;
+transition:0.3s;
 }
 
 .contact a:hover{
 transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(0,255,255,0.5);
 }
 
 </style>
 </head>
 
 <body>
+
+<header>
+
+<h3>Hospital Project</h3>
+
+<div class="theme-toggle" onclick="toggleTheme()">
+🔥
+</div>
+
+</header>
 
 <div class="container">
 
@@ -90,6 +139,24 @@ informasi pasien dengan cepat dan efisien.
 </div>
 
 </div>
+
+<script>
+
+function toggleTheme(){
+
+document.body.classList.toggle("red-theme");
+
+const icon=document.querySelector(".theme-toggle");
+
+if(document.body.classList.contains("red-theme")){
+icon.innerHTML="🔥";
+}else{
+icon.innerHTML="❄️";
+}
+
+}
+
+</script>
 
 </body>
 </html>
