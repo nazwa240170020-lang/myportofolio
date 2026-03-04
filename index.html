@@ -376,7 +376,7 @@ background:#ffffff;
 border-radius:10px;
 box-shadow:0 25px 40px rgba(0,0,0,0.6);
 transition:0.5s;
-}n:0.5s;
+transition:0.5s;
 }
 
 .polaroid::before{
@@ -800,7 +800,121 @@ animation:techFade 0.8s ease forwards;
 transform:translateY(-6px);
 box-shadow:0 0 20px var(--accent),
            0 0 40px var(--accent);
+
+/* ===== RESPONSIVE MOBILE ===== */
+
+@media (max-width: 768px){
+
+header{
+flex-direction:column;
+align-items:center;
+gap:15px;
 }
+
+nav{
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+}
+
+
+/* ===== RESPONSIVE MOBILE ===== */
+
+@media screen and (max-width:768px){
+
+header{
+flex-direction:column;
+align-items:center;
+gap:15px;
+padding:20px;
+}
+
+nav{
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+}
+
+/* HERO */
+.hero{
+flex-direction:column;
+text-align:center;
+gap:40px;
+padding:40px 6%;
+}
+
+.hero-text{
+order:2;
+}
+
+.hero-image{
+order:1;
+}
+
+.hero-image img{
+width:200px;
+height:200px;
+}
+
+.typing-title{
+font-size:30px;
+}
+
+.role-title{
+font-size:14px;
+letter-spacing:2px;
+}
+
+/* ABOUT */
+.safe-about-card{
+flex-direction:column;
+text-align:center;
+padding:40px 20px;
+}
+
+.safe-hanging img{
+width:140px;
+}
+
+/* PROJECT */
+.projects{
+grid-template-columns:1fr;
+}
+
+/* SCRAPBOOK */
+.scrapbook-container{
+grid-template-columns:1fr;
+padding:30px;
+}
+
+/* CERTIFICATE */
+.certificate-box{
+width:100%;
+}
+
+/* TECH STACK */
+.tech-track i{
+font-size:35px;
+}
+
+/* CONTACT */
+.contact-icons{
+gap:15px;
+}
+
+.contact-icons a{
+width:50px;
+height:50px;
+font-size:20px;
+}
+
+/* SECTION PADDING */
+section{
+padding:70px 6%;
+}
+
+}
+
 
 @keyframes techFade{
 to{
@@ -959,7 +1073,7 @@ autoplay>
 <h3>Hospital Information System</h3>
 <p>PHP & MySQL based system.</p>
 </div>
-<a href="http://localhost/hospital_management" target="_blank" class="btn">
+<a href="#hospital-desc" class="btn">
 View Project
 </a>
 </div>
@@ -978,6 +1092,22 @@ View Project
 </div>
 
 <section class="scrapbook-section">
+
+    <section id="hospital-desc" style="padding:80px 10%;">
+<h2 class="section-title">Hospital Information System</h2>
+
+<div class="card" style="max-width:700px;margin:auto;text-align:center;">
+
+<p>
+Sistem manajemen rawat inap rumah sakit berbasis PHP dan MySQL yang digunakan
+untuk mengelola data pasien, penempatan kamar, serta pencatatan perawatan
+selama pasien dirawat. Sistem ini membantu proses administrasi rumah sakit
+menjadi lebih terorganisir dan memudahkan tenaga medis dalam mengakses
+informasi pasien secara cepat dan efisien.
+</p>
+
+</div>
+</section>
 <h2 class="section-title">Activities</h2>
 
 <div class="scrapbook-container">
@@ -1145,4 +1275,3 @@ toggleIcon.innerHTML = "❄️";
 
 </body>
 </html>
-
